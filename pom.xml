@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.liepin</groupId>
-	<artifactId>qiushi-liepin</artifactId>
+	<artifactId>qiushi-personal</artifactId>
 	<version>1.0.0</version> 
 	<packaging>jar</packaging>
 
@@ -126,10 +126,14 @@
 	</build>
 	<distributionManagement>
 		<repository>
-			<id>releases-snapshots</id>
-			<name>Liepin Snapshots Repository</name>
-			<url>http://10.10.10.16:1399/nexus/content/repositories/releases-snapshots/</url>
-			<layout>default</layout>
+			<id>meituan-nexus-releases</id>
+			<name>Meituan Nexus Repository</name>
+			<url>http://maven.sankuai.com/nexus/content/repositories/releases/</url>
 		</repository>
+		<snapshotRepository>
+			<id>meituan-nexus-snapshots</id>
+			<name>Meituan Nexus Repository</name>
+			<url>http://maven.sankuai.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>
