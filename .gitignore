@@ -1,0 +1,11 @@
+#IDEA
+**/.idea/
+**/*.iml
+
+#Compile folder
+**/target/
+
+#log output
+**/logs/
+
+#xxx/src/main/java
