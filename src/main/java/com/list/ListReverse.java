@@ -7,44 +7,23 @@ package com.list;
  * CreateTime : 2019年01月24日 14:25:00
  */
 public class ListReverse {
-    static class Node{
-        int data;
-        Node next;
 
-        public Node(int data) {
-            this.data = data;
-        }
-
-        public int getData() {
-            return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public Node setNext(Node next) {
-            this.next = next;
-            return next;
-        }
-
-        public void printNode(){
-            System.out.println(this.data);
-            if (this.next!=null){
-                this.next.printNode();
-            }
-        }
-    }
-
-    public static void reverse(Node n, Node pre){
+    public static void reverse1(Node n, Node pre) {
         if (n == null) return;
         Node next = n.next;
         n.next = pre;
-        reverse(next, n);
+        reverse1(next, n);
+    }
+
+    public static void reverse2(Node n) {
+        Node pre = null;
+        Node curr = n;
+        while(curr != null){
+            Node tmp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = tmp;
+        }
     }
 
     public static void main(String[] args) {
@@ -55,7 +34,9 @@ public class ListReverse {
         Node n5 = new Node(5);
         n1.setNext(n2).setNext(n3).setNext(n4).setNext(n5);
         n1.printNode();
-        reverse(n1, null);
+        reverse1(n1, null);
         n5.printNode();
+        reverse2(n5);
+        n1.printNode();
     }
 }
